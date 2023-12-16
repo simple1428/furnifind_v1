@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furnifind: The Furniture E-commerce Platform</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1, h2, h3 {
-            color: #4c4c4c;
-        }
-        h2, h3 {
-            margin-top: 1em;
-        }
-        p {
-            line-height: 1.5;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 2em;
-        }
-        li {
-            margin-bottom: 0.5em;
-        }
-        pre {
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            padding: 1em;
-            white-space: pre-wrap;
-        }
-    </style>
-</head>
 <body>
     <h1>Furnifind: The Furniture E-commerce Platform</h1>
     <p>Furnifind is a revolutionary furniture e-commerce platform built using Laravel, Inertia, and ReactJS. It allows users to browse and purchase a wide range of furniture items online, including sofas, dining tables, and bed frames. With a focus on simplicity, security, and a visually appealing user interface, Furnifind offers an unparalleled shopping experience for furniture enthusiasts.</p>
