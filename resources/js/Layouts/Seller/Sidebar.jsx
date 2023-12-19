@@ -79,8 +79,8 @@ export default function Sidebar() {
             links: [
                 {
                     label: "Produk",
-                    href: "/",
-                    isActive: url === "/",
+                    href: route("product.index"),
+                    isActive: url.startsWith("/0102/product"),
                 },
             ],
         },

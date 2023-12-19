@@ -20,8 +20,11 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@arismun/format-rupiah": "^3.0.0",
         "clsx": "^2.0.0",
         "flowbite": "^2.2.1",
-        "react-icons": "^4.12.0"
+        "react-icons": "^4.12.0",
+        "react-paginate": "^8.2.0",
+        "sweetalert2": "^11.10.1"
     }
 }

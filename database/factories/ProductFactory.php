@@ -19,6 +19,10 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+         $imageUrls = [
+            "https://lagomhomestore.com/cdn/shop/files/kursi-minimalis-dengan-premium-cushion-chair-lagom-home-store-teak-furniture-boutique-jati-furnitur-jakarta-39277364904172.jpg?v=1697171875&width=2972",
+            "https://lagomhomestore.com/cdn/shop/files/kursi-minimalis-dengan-premium-cushion-chair-lagom-home-store-teak-furniture-boutique-jati-furnitur-jakarta-39277365035244.jpg?v=1697171878&width=2980"
+          ];
         return [
             'category_id' => function () {
                 return \App\Models\Category::factory()->create()->id;
@@ -26,11 +30,14 @@ class ProductFactory extends Factory
             'seller_id' => function () {
                 return \App\Models\Seller::factory()->create()->id;
             },
-            'name' => $this->faker->word,
+            'title' => $this->faker->word,
+            'slug' => $this->faker->slug,
             'description' => $this->faker->sentence,
             'price' => $this->faker->randomFloat(2, 10, 100),
             'stock' => $this->faker->numberBetween(1, 100),
-            'image' => $this->faker->imageUrl(),
+            'images' => json_encode($imageUrls),
+            'status' => '1',
+            'verify' => '1',
             'created_at' => now(),
             'updated_at' => now(),
         ];

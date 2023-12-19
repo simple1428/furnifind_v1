@@ -29,7 +29,7 @@ class VariationProductFactory extends Factory
                 return \App\Models\Product::factory()->create()->id;
             },
             'name' => $this->faker->word,
-            'price_adjustment' => $this->faker->randomFloat(2, -10, 10),
+            'price' => $this->faker->randomFloat(2, -10, 10),
             'stock' => $this->faker->numberBetween(0, 100),
             'created_at' => now(),
             'updated_at' => now(),

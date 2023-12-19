@@ -12,17 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
+
             $table->id();
+            $table->string('title');
+            $table->string('slug');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('seller_id'); // Tambahkan kolom seller_id
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade'); // Tambahkan kunci asing untuk seller_id
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->decimal('price', 10, 2);
-            $table->integer('stock')->nullable();
-            $table->string('image')->nullable();
+            $table->longText('description');
+            $table->decimal('price', 10, 2)->nullable();
+            $table->integer('stock' )->nullable();
+            $table->longText('images');
+            $table->boolean('verify');
+            $table->boolean('status');
             $table->timestamps();
+
+
+
+            $table->unsignedBigInteger('seller_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade');
         });
     }
 

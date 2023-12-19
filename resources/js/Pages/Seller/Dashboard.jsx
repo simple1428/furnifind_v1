@@ -16,7 +16,31 @@ export default function Dashboard() {
                         <p className="text-gray-400 text-xs">
                             Hal-hal yang perlu ditangani
                         </p>
-                        <div className="grid grid-cols-4 mt-7 gap-y-5"></div>
+                        <div className="grid grid-cols-4 mt-7 gap-y-5">
+                            <Card
+                                total="3"
+                                title="Pesanan Saya"
+                                className="border-r"
+                                href="/portal/sale/order" // Langkah 2
+                            />
+                            <Card
+                                total="12"
+                                title="Pengiriman perlu diproses"
+                                className="border-r"
+                                href="/portal/sale/order?type=new" // Langkah 2
+                            />
+                            <Card
+                                total="1"
+                                title="Pesanan dikirim"
+                                className="border-r"
+                                href="/portal/sale/order?type=shipping" // Langkah 2
+                            />
+                            <Card
+                                total="8"
+                                title="Pengiriman dibatalkan"
+                                href="/portal/sale/order?type=cancel" // Langkah 2
+                            />
+                        </div>
                     </Box>
                     <Box className="w-[30%] h-44"></Box>
                 </Container>
