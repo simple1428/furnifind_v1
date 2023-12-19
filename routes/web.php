@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SellerController\Dashboard as DashboardSeller;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,8 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::middleware('auth')->group(function () {
-
+Route::prefix('0102')->middleware('auth')->group(function () {
+    Route::get('/dashboard',[DashboardSeller::class, 'index'])->name('seller-dashboard');
 });
 
 require __DIR__.'/auth.php';
