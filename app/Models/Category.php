@@ -21,8 +21,8 @@ class Category extends Model
     public function sluggable(): array
     {
         return [
-            'slug_category' => [
-                'source' => 'name_category'
+            'slug' => [
+                'source' => 'name'
             ]
         ];
     }

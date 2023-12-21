@@ -5,8 +5,7 @@ import {
     SecondaryButton,
     SuccessAlert,
 } from "@/Components/Index";
-import AdminLayout from "@/Layouts/AdminLayout";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import {
     Category,
     Description,
@@ -20,6 +19,7 @@ import {
 import { useState } from "react";
 import Stock from "./Partials/Add/Stock";
 import useProductForm from "./Hooks/useProductForm";
+import SellerLayout from "@/Layouts/Seller/Index";
 
 export default function Create({ categories }) {
     const asset = window.asset;
@@ -32,7 +32,7 @@ export default function Create({ categories }) {
     return (
         <>
             <Head title="Create Product" />
-            <AdminLayout title="Tambah Produk Baru">
+            <SellerLayout title="Tambah Produk Baru">
                 <Container className="w-full">
                     <Box className="h-fit py-5 shadow-md mb-5">
                         <h1 className="text-md font-semibold">
@@ -55,7 +55,6 @@ export default function Create({ categories }) {
                         <ListVariation form={form} />
                         <Price form={form} />
                         <Stock form={form} />
-                        <Weight form={form} />
                         {/* end form penjualan */}
                     </Box>
                     <div className="  bg-white w-full  shadow-md py-5 flex justify-end items-center gap-x-3 px-3 ">
@@ -81,7 +80,7 @@ export default function Create({ categories }) {
                         </PrimaryButton>
                     </div>
                 </Container>
-            </AdminLayout>
+            </SellerLayout>
         </>
     );
 }

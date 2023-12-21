@@ -81,7 +81,7 @@ const SearchBox = ({ products, categories, setProduct, url }) => {
                             {categories.map((category, i) => {
                                 return (
                                     <option key={i} value={category.id}>
-                                        {category.name_category}
+                                        {category.name}
                                     </option>
                                 );
                             })}

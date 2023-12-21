@@ -158,46 +158,67 @@ const TableProduct = ({ product }) => {
                                         )}
                                     </ul>
                                 </td>
-                                <td className="text-start w-[10%] py-2">
-                                    <ul className="text-blue-700 space-y-1 cursor-pointer hover:text-blue-900 transition decora">
-                                        <li>
-                                            <Link
-                                                href={route(
-                                                    "product.edit",
-                                                    item.id
-                                                )}
-                                                className="text-blue-700 "
-                                            >
-                                                Ubah
-                                            </Link>
-                                        </li>
-                                        {item.status === 3 ? (
-                                            <li
-                                                onClick={() =>
-                                                    handleLive(item.id)
-                                                }
-                                            >
-                                                Tampilkan
-                                            </li>
-                                        ) : (
-                                            <li
-                                                onClick={() =>
-                                                    handleArchive(item.id)
-                                                }
-                                            >
-                                                Arsipkan
-                                            </li>
-                                        )}
 
-                                        <li
-                                            onClick={() =>
-                                                handleDelete(item.id)
-                                            }
-                                        >
-                                            Hapus
-                                        </li>
-                                    </ul>
-                                </td>
+                                {item.verify ? (
+                                    <td className="text-start w-[10%] py-2">
+                                        <ul className="text-blue-700 space-y-1 cursor-pointer hover:text-blue-900 transition decora">
+                                            <li>
+                                                <Link
+                                                    href={route(
+                                                        "product.edit",
+                                                        item.id
+                                                    )}
+                                                    className="text-blue-700 "
+                                                >
+                                                    Ubah
+                                                </Link>
+                                            </li>
+                                            {item.status === 3 ? (
+                                                <li
+                                                    onClick={() =>
+                                                        handleLive(item.id)
+                                                    }
+                                                >
+                                                    Tampilkan
+                                                </li>
+                                            ) : (
+                                                <li
+                                                    onClick={() =>
+                                                        handleArchive(item.id)
+                                                    }
+                                                >
+                                                    Arsipkan
+                                                </li>
+                                            )}
+
+                                            <li
+                                                onClick={() =>
+                                                    handleDelete(item.id)
+                                                }
+                                            >
+                                                Hapus
+                                            </li>
+                                        </ul>
+                                    </td>
+                                ) : (
+                                    <td className="text-start w-[10%] py-2">
+                                        <ul className="text-blue-700 space-y-1 cursor-pointer hover:text-blue-900 transition decora">
+                                            <li>
+                                                <p className="text-green-400">
+                                                    Checking
+                                                </p>
+                                            </li>
+
+                                            <li
+                                                onClick={() =>
+                                                    handleDelete(item.id)
+                                                }
+                                            >
+                                                Hapus
+                                            </li>
+                                        </ul>
+                                    </td>
+                                )}
                             </tr>
                         );
                     })

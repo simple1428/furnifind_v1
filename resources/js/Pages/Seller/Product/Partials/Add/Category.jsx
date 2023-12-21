@@ -32,7 +32,7 @@ export default function Category({ form, categories }) {
                         <Listbox.Button className="relative w-full cursor-default rounded-md bg-gray-50 py-1 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm border">
                             <span className="block truncate">
                                 {selectedCategory
-                                    ? selectedCategory.name_category
+                                    ? selectedCategory.name
                                     : "Pilih Kategori"}
                             </span>
                             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -70,7 +70,7 @@ export default function Category({ form, categories }) {
                                                             : "font-normal"
                                                     }`}
                                                 >
-                                                    {category.name_category}
+                                                    {category.name}
                                                 </span>
                                                 {selected && (
                                                     <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-600">

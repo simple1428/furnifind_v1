@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Seller;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,9 +18,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->unsignedBigInteger('category_id');
+            $table->foreignIdFor(Category::class);
+            $table->foreignIdFor(Seller::class);
             $table->longText('description');
-            $table->decimal('price', 10, 2)->nullable();
+            $table->bigInteger('price')->nullable();
             $table->integer('stock' )->nullable();
             $table->longText('images');
             $table->boolean('verify');
@@ -26,10 +29,6 @@ return new class extends Migration
             $table->timestamps();
 
 
-
-            $table->unsignedBigInteger('seller_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade');
         });
     }
 
