@@ -19,7 +19,12 @@ class ProductSeeder extends Seeder
         $categories = Category::all();
 
         $productsData = [];
+        $imageUrls = [
 
+            "https://lagomhomestore.com/cdn/shop/files/kursi-minimalis-dengan-premium-cushion-chair-lagom-home-store-teak-furniture-boutique-jati-furnitur-jakarta-39277364904172.jpg?v=1697171875&width=2972",
+            "https://lagomhomestore.com/cdn/shop/files/kursi-minimalis-dengan-premium-cushion-chair-lagom-home-store-teak-furniture-boutique-jati-furnitur-jakarta-39277364904172.jpg?v=1697171875&width=2972",
+            "https://lagomhomestore.com/cdn/shop/files/kursi-minimalis-dengan-premium-cushion-chair-lagom-home-store-teak-furniture-boutique-jati-furnitur-jakarta-39277364904172.jpg?v=1697171875&width=2972",
+          ];
         for ($i = 1; $i <= 10; $i++) {
             $seller = $sellers->random();
             $category = $categories->random();
@@ -32,7 +37,7 @@ class ProductSeeder extends Seeder
                 'description' => "Description for Product $i.",
                 'price' => rand(500000, 5000000) ,
                 'stock' => rand(50, 200),
-                'images' =>  "https://lagomhomestore.com/cdn/shop/files/kursi-minimalis-dengan-premium-cushion-chair-lagom-home-store-teak-furniture-boutique-jati-furnitur-jakarta-39277364904172.jpg?v=1697171875&width=2972" ,
+                'images' =>  json_encode($imageUrls) ,
                 'verify' => 0,
                 'status' => 1,
             ];
