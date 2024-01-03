@@ -5,7 +5,6 @@ import {
     SecondaryButton,
     SuccessAlert,
 } from "@/Components/Index";
-import AdminLayout from "@/Layouts/AdminLayout";
 import { Head, Link, useForm } from "@inertiajs/react";
 import {
     Category,
@@ -19,6 +18,7 @@ import {
 } from "./Partials/Add/Index";
 import Stock from "./Partials/Add/Stock";
 import useProductForm from "./Hooks/useProductForm";
+import SellerLayout from "@/Layouts/Seller/Index";
 
 export default function Edit({ product, categories }) {
     const { isSaving, form, submit, closeModal, processing } = useProductForm({
@@ -29,7 +29,7 @@ export default function Edit({ product, categories }) {
     return (
         <>
             <Head title="Edit Product" />
-            <AdminLayout title="Edit Produk">
+            <SellerLayout title="Edit Produk">
                 <Container className="w-full">
                     <Box className="h-fit py-5 shadow-md mb-5">
                         <h1 className="text-md font-semibold">
@@ -51,8 +51,6 @@ export default function Edit({ product, categories }) {
                         <ListVariation form={form} />
                         <Price form={form} />
                         <Stock form={form} />
-                        <Weight form={form} />
-                        {/* end form penjualan */}
                     </Box>
                     <div className="  bg-white w-full  shadow-md py-5 flex justify-end items-center gap-x-3 px-3 ">
                         <Link
@@ -71,7 +69,7 @@ export default function Edit({ product, categories }) {
                         </PrimaryButton>
                     </div>
                 </Container>
-            </AdminLayout>
+            </SellerLayout>
         </>
     );
 }
