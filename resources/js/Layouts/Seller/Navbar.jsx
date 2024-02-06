@@ -14,7 +14,7 @@ export default function Navbar(props) {
     return (
         <div className="w-full flex justify-between fixed top-0 px-5 py-2 h-[56px] shadow-sm items-center bg-white z-[800]">
             <Link
-                href={route("dashboard")}
+                href={route("seller-dashboard")}
                 className="inline-flex justify-center items-center gap-1"
             >
                 <img

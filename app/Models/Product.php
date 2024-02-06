@@ -5,6 +5,7 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
@@ -12,7 +13,10 @@ class Product extends Model
     protected $guarded = [
         'id'
     ];
-
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     public function sluggable(): array
     {
         return [
@@ -34,5 +38,14 @@ class Product extends Model
     public function seller()
     {
         return $this->belongsTo(Seller::class, 'seller_id');
+    }
+    public function likes(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'like_products', 'product_id', 'user_id');
+    }
+
+    public function isLikedByUser()
+    {
+        return $this->likes()->where('user_id', auth()->id())->exists();
     }
 }

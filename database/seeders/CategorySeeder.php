@@ -17,61 +17,61 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Kursi Makan',
                 'description' => 'A comfortable chair for dining purposes.',
-                'image' => 'kursi_makan.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'kursi-makan'
             ],
             [
                 'name' => 'Meja Belajar',
                 'description' => 'A sturdy desk for studying or working.',
-                'image' => 'meja_belajar.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'meja-belajar'
             ],
             [
                 'name' => 'Lampu Tidur',
                 'description' => 'Soft lighting for a cozy sleep environment.',
-                'image' => 'lampu_tidur.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'lampu-tidur'
             ],
             [
                 'name' => 'Sofa Ruang Tamu',
                 'description' => 'A stylish and comfortable sofa for the living room.',
-                'image' => 'sofa_ruang_tamu.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'sofa-ruang-tamu'
             ],
             [
                 'name' => 'Rak Buku',
                 'description' => 'An organized shelf for your book collection.',
-                'image' => 'rak_buku.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'rak-buku'
             ],
             [
                 'name' => 'Tempat Tidur',
                 'description' => 'A cozy bed for a good night\'s sleep.',
-                'image' => 'tempat_tidur.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'tempat-tidur'
             ],
             [
                 'name' => 'Cermin Dinding',
                 'description' => 'A decorative wall mirror to enhance your space.',
-                'image' => 'cermin_dinding.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'cermin-dinding'
             ],
             [
                 'name' => 'Lemari Pakaian',
                 'description' => 'A spacious wardrobe for your clothing.',
-                'image' => 'lemari_pakaian.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'lemari-pakaian'
             ],
             [
                 'name' => 'Karpet Ruang Tamu',
                 'description' => 'A plush carpet to add warmth to your living room.',
-                'image' => 'karpet_ruang_tamu.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'karpet-ruang-tamu'
             ],
             [
                 'name' => 'Meja TV',
                 'description' => 'A sleek table for your television and entertainment system.',
-                'image' => 'meja_tv.jpg',
+                'image' => 'https://www.shutterstock.com/image-photo/category-word-scattered-english-alpabets-260nw-1594857565.jpg',
                 'slug' => 'meja-tv'
             ],
         ];

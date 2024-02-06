@@ -1,29 +1,32 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SellerController\Dashboard as DashboardSeller;
-use App\Http\Controllers\SellerController\Product as ProductSeller;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController\Home;
+use App\Http\Controllers\HomeController\Seller;
+// use App\Http\Controllers\HomeController\IsCart as Cart;
+use App\Http\Controllers\HomeController\Product;
+use App\Http\Controllers\HomeController\Category;
+use App\Http\Controllers\IsCart;
+use App\Http\Controllers\IsLike;
+use App\Http\Controllers\SellerController\Product as ProductSeller;
+use App\Http\Controllers\SellerController\Dashboard as DashboardSeller;
 
 
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
 
-
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+    Route::get('/', [Home::class, 'index'])->name('home.index');
+    Route::get('/product/all', [Product::class, 'index'])->name('products.all');
+    Route::get('/product/{product}', [Product::class, 'show'])->name('product.show');
+    Route::get('/popular', [Product::class, 'popular'])->name('product.popular');
+    Route::get('/categories', [Category::class, 'index'])->name('categories.all');
+    Route::get('/furniplus', [Seller::class, 'index'])->name('seller.furniplus');
+    Route::post('/add-to-cart/{product}', [ IsCart::class , 'addToCart'])->name('cart.add');
+    Route::post('/reduce-cart/{cart}', [IsCart::class, 'reduceCart'])->name('cart.reduce');
+    Route::post('/add-cart/{cart}', [IsCart::class, 'addCart'])->name('cart.addcart');
+    Route::post('/remove-cart/{cart}', [IsCart::class, 'removeCart'])->name('cart.remove');
+    Route::post('/product/{product}/like', [IsLike::class, 'index'])->name('product.like');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
